@@ -5,10 +5,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountNumberGenerator {
 
-    public String generate() {
 
-        return "ACC" + System.currentTimeMillis();
+
+
+        private static final String PREFIX = "ACC";
+
+        public String generate(Long id) {
+            return PREFIX + String.format("%08d", id);
+        }
 
     }
-
-}
